@@ -1,0 +1,128 @@
+html, body{
+height: 100%;
+}
+
+body{
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family:'Poppins', sans-serif;
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background-image:url("https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg");
+background-repeat:repeat;
+background-size:180px;
+
+opacity:0.06;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+body.dark-mode::before{
+
+opacity:0.08;
+
+}
+
+main{
+flex: 1;
+}
+
+/* Separación de contenido */
+.main-container {
+    margin-top: 80px;
+}
+
+/* ===== DARK MODE ===== */
+
+.dark-mode{
+    background-color:#121212;
+    color:white;
+}
+
+/* cards */
+
+.dark-mode .card{
+    background-color:#1e1e1e;
+    color:white;
+}
+
+/* navbar */
+
+.dark-mode .navbar{
+    background-color:#1a1a1a !important;
+}
+
+/* modal */
+
+.dark-mode .modal-content{
+    background-color:#1e1e1e;
+    color:white;
+}
+
+/* botones */
+
+.dark-mode .btn{
+    border-color:white;
+}
+
+/* Acordeón */
+
+/* Acordeón modo oscuro */
+
+body.dark-mode .accordion-item{
+
+background-color:#2b3035;
+border-color:#444;
+
+}
+
+body.dark-mode .accordion-button{
+
+background-color:#2b3035;
+color:#e4e4e4;
+
+}
+
+body.dark-mode .accordion-button:not(.collapsed){
+
+background-color:#343a40;
+color:#ffffff;
+
+}
+
+body.dark-mode .accordion-body{
+
+background-color:#2b3035;
+color:#e4e4e4;
+
+}
+
+body.dark-mode .accordion-button::after{
+filter: invert(1);
+}
+
+/* Toast/Alerta de bootstrap */
+.toast{
+font-size:18px;
+padding:15px;
+border-radius:10px;
+}

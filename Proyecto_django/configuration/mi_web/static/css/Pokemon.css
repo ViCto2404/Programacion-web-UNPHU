@@ -1,0 +1,24 @@
+/* Cards más bonitas */
+.pokemon-card {
+    transition: transform 0.2s;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);   
+    background-color:#ffecec;
+}
+
+/* Imagen centrada */
+.pokemon-img {
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.pokemon-info{
+border-radius:12px;
+}
+
+body.dark-mode .pokemon-info{
+background-color:#2b3035;
+color:#e4e4e4;
+}

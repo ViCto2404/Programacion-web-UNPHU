@@ -1,0 +1,82 @@
+/* FOOTER */
+
+.footer-pokedex{
+
+background:#1e1e1e;
+color:white;
+padding:40px 0;
+
+}
+
+/* TITULOS */
+
+.footer-title{
+
+font-weight:600;
+margin-bottom:15px;
+
+}
+
+/* LINKS */
+
+.footer-links{
+
+list-style:none;
+padding:0;
+
+}
+
+.footer-links li{
+
+margin-bottom:8px;
+
+}
+
+.footer-links a{
+
+text-decoration:none;
+color:#ccc;
+transition:0.3s;
+
+}
+
+.footer-links a:hover{
+
+color:#ffd700;
+
+}
+
+/* REDES SOCIALES */
+
+.social-icons a{
+
+font-size:24px;
+margin-right:15px;
+color:white;
+transition:0.3s;
+
+}
+
+.social-icons a:hover{
+
+color:#ffd700;
+transform:scale(1.2);
+
+}
+
+/* COPYRIGHT */
+
+.footer-copy{
+
+font-size:14px;
+color:#aaa;
+
+}
+
+
+/* DARK MODE COMPATIBLE */
+
+.dark-mode .footer{
+background-color: #2b3035;
+color: #e4e4e4;
+}
