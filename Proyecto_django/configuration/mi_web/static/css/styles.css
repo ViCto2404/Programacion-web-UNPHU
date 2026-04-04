@@ -1,0 +1,152 @@
+body {
+    background-color: #f8f9fa;
+    font-family:'Poppins', sans-serif;
+}
+
+/* Separación de contenido */
+.main-container {
+    margin-top: 80px;
+}
+
+/* Cards más bonitas */
+.pokemon-card {
+    transition: transform 0.2s;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);   
+    background-color:#ffecec;
+}
+
+/* Imagen centrada */
+.pokemon-img {
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.navbar-brand{
+font-size:22px;
+font-weight:600;
+}
+
+.nav-link:hover{
+color:#ffd700 !important;
+}
+
+.list-group-item a{
+text-decoration:none;
+font-weight:500;
+}
+
+/* ===== OFFCANVAS POKEDEX ===== */
+
+.offcanvas{
+    background: linear-gradient(180deg,#ff3b3b,#cc0000);
+    color: white;
+}
+
+/* titulo del menu */
+
+.offcanvas-title{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* lista */
+
+.list-group{
+    margin-top: 15px;
+}
+
+/* items del menu */
+
+.list-group-item{
+    background-color: rgba(255,255,255,0.1);
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* links */
+
+.list-group-item a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    display: block;
+}
+
+/* efecto hover */
+
+.list-group-item:hover{
+    background-color: white;
+    transform: translateX(5px);
+}
+
+.list-group-item:hover a{
+    color: #cc0000;
+}
+
+/* boton hamburguesa */
+
+.btn-light{
+    border-radius: 8px;
+}
+
+/* icono hamburguesa */
+
+.bi-list{
+    font-size: 24px;
+}
+
+.list-group-item:nth-child(1):hover{
+background:#78c850;
+}
+
+.list-group-item:nth-child(2):hover{
+background:#f08030;
+}
+
+.list-group-item:nth-child(3):hover{
+background:#6890f0;
+}
+
+/* IFRAME FIXED */
+
+.fixed-iframe {
+    position: fixed;
+
+    /* Separación de bordes */
+    bottom: 20px;
+    right: 20px;
+
+    /* Tamaño más pequeño */
+    width: 150px;
+    height: 100px;
+
+    /* Estilo visual */
+    border: 2px solid #333;
+    border-radius: 12px;
+    background: white;
+
+    /* Sombra para que no se vea pegado */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+    z-index: 9999;
+}
+
+.fixed-iframe:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* .card:hover{
+
+transform:scale(1.05);
+transition:0.3s;
+
+background-color:#ffecec;
+
+} */

@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Pokedex - Bulbasaur{% endblock %}
+
+{% block content %}
+    <!-- CONTENIDO -->
+    <div class="container main-container text-center">
+
+        <h1 class="mb-4">Bulbasaur 🌱</h1>
+
+        <!-- CARRUSEL -->
+        <div id="carouselBulbasaur" class="carousel slide w-50 mx-auto" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" class="d-block w-100">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://img.pokemondb.net/sprites/home/shiny/bulbasaur.png" class="d-block w-100">
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBulbasaur" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselBulbasaur" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+
+        <br>
+
+        <!-- BOTONES -->
+        <button class="btn btn-success" onclick="alert('Bulbasaur elegido!')">Elegir</button>
+
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalBulbasaur">
+            Ver información rápida
+        </button>
+
+        <br><br>
+
+        <!-- ACCORDION -->
+        <div class="accordion w-75 mx-auto" id="accordionBulbasaur">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#infoB1">
+                        Tipo
+                    </button>
+                </h2>
+                <div id="infoB1" class="accordion-collapse collapse show" data-bs-parent="#accordionBulbasaur">
+                    <div class="accordion-body">
+                        Tipo Planta / Veneno 🌱
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#infoB2">
+                        Descripción
+                    </button>
+                </h2>
+                <div id="infoB2" class="accordion-collapse collapse" data-bs-parent="#accordionBulbasaur">
+                    <div class="accordion-body">
+                        Puede sobrevivir varios días sin comer gracias a la energía que almacena en su bulbo.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#infoB3">
+                        Habilidades
+                    </button>
+                </h2>
+                <div id="infoB3" class="accordion-collapse collapse" data-bs-parent="#accordionBulbasaur">
+                    <div class="accordion-body">
+                        Espesura, Clorofila
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="modalBulbasaur" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">Bulbasaur</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body text-center">
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" class="img-fluid mb-3" style="max-height:200px;">
+                    
+                    <p><strong>Tipo:</strong> Planta / Veneno 🌱</p>
+                    <p><strong>Altura:</strong> 0.7 m</p>
+                    <p><strong>Peso:</strong> 6.9 kg</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

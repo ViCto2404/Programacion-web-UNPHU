@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Pokedex - Noticias{% endblock %}
+
+{% block content %}
+    <div class="card mb-3">
+        <img src="{% static 'img/pokemonnews.jpg' %}" class="card-img-top">
+        <div class="card-body">
+            <h5>Nuevo juego Pokémon</h5>
+            <p>La franquicia Pokémon sigue expandiendo su universo.</p>
+        </div>
+    </div>
+{% endblock %}
