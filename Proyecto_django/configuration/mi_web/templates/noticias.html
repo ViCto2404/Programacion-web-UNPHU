@@ -30,7 +30,7 @@
                             <hr class="my-3 opacity-10">
                             <p class="card-text">{{ noticia.contenido|truncatewords:50 }}</p>
                             <div class="mt-3">
-                                <a href="#" class="btn btn-outline-danger btn-sm rounded-pill px-4">Leer más</a>
+                                <a href="{% url 'noticia_detalle' noticia.id %}" class="btn btn-outline-danger btn-sm rounded-pill px-4 shadow-sm">Leer más</a>
                             </div>
                         </div>
                     </div>
