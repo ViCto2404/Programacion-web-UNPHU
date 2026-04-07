@@ -1,14 +1,57 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Pokedex - Noticias{% endblock %}
+{% block title %}Pokedex - Noticias Pokémon{% endblock %}
 
 {% block content %}
-    <div class="card mb-3">
-        <img src="{% static 'img/pokemonnews.jpg' %}" class="card-img-top">
-        <div class="card-body">
-            <h5>Nuevo juego Pokémon</h5>
-            <p>La franquicia Pokémon sigue expandiendo su universo.</p>
+<div class="container mt-5">
+    <h1 class="text-center mb-5" style="color: #ff0000; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Últimas Noticias Pokémon</h1>
+    
+    <div class="row">
+        {% for noticia in noticias %}
+        <div class="col-12 mb-4">
+            <div class="card shadow-sm border-0 overflow-hidden" style="border-radius: 15px; transition: transform 0.3s ease;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        {% if noticia.imagen_url %}
+                        <img src="{{ noticia.imagen_url }}" class="img-fluid h-100" alt="{{ noticia.titulo }}" style="object-fit: cover; min-height: 200px;">
+                        {% else %}
+                        <img src="{% static 'img/Pokedex.jpg' %}" class="img-fluid h-100" alt="Noticia sin imagen" style="object-fit: cover; min-height: 200px;">
+                        {% endif %}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge rounded-pill bg-danger">Noticia</span>
+                                <small class="text-muted"><i class="bi bi-calendar3"></i> {{ noticia.fecha_publicacion|date:"d M, Y" }}</small>
+                            </div>
+                            <h2 class="card-title h4 fw-bold">{{ noticia.titulo }}</h2>
+                            <p class="card-text text-secondary">{{ noticia.resumen }}</p>
+                            <hr class="my-3 opacity-10">
+                            <p class="card-text">{{ noticia.contenido|truncatewords:50 }}</p>
+                            <div class="mt-3">
+                                <a href="#" class="btn btn-outline-danger btn-sm rounded-pill px-4">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        {% empty %}
+        <div class="col-12 text-center py-5">
+            <div class="alert alert-light shadow-sm border-0 py-5" style="border-radius: 15px;">
+                <i class="bi bi-newspaper display-1 text-muted mb-3"></i>
+                <h3 class="text-muted">No hay noticias publicadas todavía.</h3>
+                <p class="text-secondary">¡Vuelve pronto para estar al día con el mundo Pokémon!</p>
+            </div>
+        </div>
+        {% endfor %}
     </div>
+</div>
+
+<style>
+    .card:hover {
+        transform: translateY(-5px);
+    }
+</style>
 {% endblock %}
