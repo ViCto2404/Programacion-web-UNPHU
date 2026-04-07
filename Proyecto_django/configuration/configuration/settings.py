@@ -127,5 +127,5 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "brainbits8@gmail.com"
-EMAIL_HOST_PASSWORD = "TrJ2k32fqp$WHY"
+EMAIL_HOST_PASSWORD = "zoav djpn rtrc lrkd"
 DEFAULT_FROM_EMAIL = "starlin2404@gmail.com"

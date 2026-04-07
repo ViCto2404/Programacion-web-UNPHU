@@ -42,7 +42,6 @@ def contacto(request):
             asunto = form.cleaned_data['asunto']
             mensaje = form.cleaned_data['mensaje']
             
-            # Formatear el correo para incluir la info del remitente real en el cuerpo
             cuerpo_mensaje = f"Has recibido un nuevo mensaje de contacto:\n\n" \
                              f"Nombre: {nombre}\n" \
                              f"Email del remitente: {email_usuario}\n" \
@@ -50,18 +49,23 @@ def contacto(request):
                              f"Mensaje:\n{mensaje}"
             
             try:
+                # Usamos EMAIL_HOST_USER para autenticar el envío (From)
+                # Usamos DEFAULT_FROM_EMAIL para recibir el correo (To)
                 send_mail(
                     f"Contacto Web: {asunto}",
                     cuerpo_mensaje,
-                    settings.DEFAULT_FROM_EMAIL, # Remitente fijo (tu cuenta)
-                    [settings.DEFAULT_FROM_EMAIL], # Destinatario (tú mismo)
+                    settings.EMAIL_HOST_USER,
+                    [settings.DEFAULT_FROM_EMAIL],
                     fail_silently=False,
                 )
                 messages.success(request, '¡Gracias! Tu mensaje ha sido enviado correctamente.')
                 return redirect('contacto')
             except Exception as e:
-                print(f"Error al enviar correo: {e}") # Para depuración si es necesario
-                messages.error(request, 'Hubo un error al enviar el mensaje. Inténtalo de nuevo más tarde.')
+                # Esto imprimirá el error real en tu consola de VS Code/Terminal
+                print(f"--- ERROR DE SMTP ---: {e}")
+                messages.error(request, f'Error al enviar el mensaje. Asegúrate de que tu "Contraseña de Aplicación" de Google sea correcta.')
+        else:
+            messages.error(request, 'Por favor, revisa los datos del formulario.')
     else:
         form = ContactoForm()
         
