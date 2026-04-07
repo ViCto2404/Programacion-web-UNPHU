@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
-from .models import Articulo
-from .forms import ContactoForm
+from .models import Articulo, Noticia
 
 def index(request):
     return render(request, 'index.html')
@@ -22,7 +21,12 @@ def squirtle(request):
     return render(request, 'squirtle.html')
 
 def noticias(request):
-    return render(request, 'noticias.html')
+    lista_noticias = Noticia.objects.all().order_by('-fecha_publicacion')
+    return render(request, 'noticias.html', {'noticias': lista_noticias})
+
+def noticia_detalle(request, id):
+    noticia = get_object_or_404(Noticia, id=id)
+    return render(request, 'noticia_detalle.html', {'noticia': noticia})
 
 def enlaces(request):
     return render(request, 'enlaces.html')
